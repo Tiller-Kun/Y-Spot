@@ -10,7 +10,7 @@ import { useSaved } from '@/state/AppProviders';
 import type { Spot } from '@/types/spot';
 import { openStatus } from '@/utils/hours';
 import { Badge, noiseTone } from './Badge';
-import { CrowdMeter } from './CrowdMeter';
+import { BusyBadge } from './BusyBadge';
 import { SpotPhoto } from './SpotPhoto';
 
 interface Props {
@@ -44,8 +44,8 @@ export function SpotCard({ spot, now }: Props) {
               {spot.nameKo}
             </Text>
           </View>
-          <CrowdMeter occupancy={spot.busyByHour[now.getHours()] ?? 0} />
           <View style={styles.badges}>
+            <BusyBadge occupancy={spot.busyByHour[now.getHours()] ?? 0} />
             <Badge label={NOISE_LABELS[spot.noise]} tone={noiseTone[spot.noise]} />
             <Badge label={status.label} tone={status.open ? 'success' : 'neutral'} />
             <Text style={styles.walk}>{spot.walkMinutesFromMainGate} min walk</Text>

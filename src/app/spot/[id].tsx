@@ -5,8 +5,7 @@ import { Alert, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/Text';
 
 import { Badge, noiseTone } from '@/components/Badge';
-import { CrowdMeter } from '@/components/CrowdMeter';
-import { OccupancyChart } from '@/components/OccupancyChart';
+import { BusyBadge } from '@/components/BusyBadge';
 import { EmptyState } from '@/components/ScreenStates';
 import { SpotPhoto } from '@/components/SpotPhoto';
 import { ACCESS_LABELS, CATEGORY_LABELS, NOISE_LABELS } from '@/constants/labels';
@@ -66,6 +65,7 @@ export default function SpotDetailScreen() {
             {spot.nameKo} · {building?.name ?? 'Unknown building'} · {CATEGORY_LABELS[spot.category]}
           </Text>
           <View style={styles.badges}>
+            <BusyBadge occupancy={spot.busyByHour[now.getHours()] ?? 0} />
             <Badge label={NOISE_LABELS[spot.noise]} tone={noiseTone[spot.noise]} icon="volume-medium-outline" />
             <Badge label={status.label} tone={status.open ? 'success' : 'neutral'} icon="time-outline" />
             <Badge label={ACCESS_LABELS[spot.access]} tone={spot.access === 'open' ? 'info' : 'warning'} icon="key-outline" />
@@ -75,14 +75,9 @@ export default function SpotDetailScreen() {
               icon="people-outline"
             />
           </View>
+          <Text style={font.caption}>Estimated typical pattern, not live data.</Text>
           {!spot.verified && <Text style={styles.unverified}>Details not yet confirmed on campus.</Text>}
         </View>
-
-        <Card title="How busy is it usually?">
-          <CrowdMeter occupancy={spot.busyByHour[now.getHours()] ?? 0} />
-          <OccupancyChart busyByHour={spot.busyByHour} currentHour={now.getHours()} />
-          <Text style={font.caption}>Estimated typical pattern, not live data.</Text>
-        </Card>
 
         <Card title="Getting there">
           <Row icon="walk-outline" text={`${spot.walkMinutesFromMainGate} min walk from the main gate`} />

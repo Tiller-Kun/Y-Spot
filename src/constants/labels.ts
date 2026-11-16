@@ -34,9 +34,15 @@ export const ACCESS_LABELS: Record<AccessRule, string> = {
   reservation: 'Reservation required',
 };
 
-export function crowdLabel(occupancy: number): string {
-  if (occupancy < 0.3) return 'Plenty of seats';
-  if (occupancy < 0.55) return 'Some seats';
-  if (occupancy < 0.8) return 'Busy';
-  return 'Packed';
+/** Three levels (green / yellow / red) so the badge reads at a glance. */
+export function crowdLevel(occupancy: number): 'low' | 'medium' | 'high' {
+  if (occupancy < 0.35) return 'low';
+  if (occupancy < 0.7) return 'medium';
+  return 'high';
 }
+
+export const CROWD_LABELS = {
+  low: 'Plenty of seats',
+  medium: 'Filling up',
+  high: 'Packed',
+} as const;

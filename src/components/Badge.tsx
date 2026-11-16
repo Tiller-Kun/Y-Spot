@@ -34,7 +34,7 @@ export function Badge({ label, tone = 'neutral', icon }: Props) {
   const { bg, fg } = toneColors[tone];
   return (
     <View style={[styles.badge, { backgroundColor: bg }]}>
-      {icon && <Ionicons name={icon} size={12} color={fg} />}
+      {icon && <Ionicons name={icon} size={16} color={fg} />}
       <Text style={[styles.label, { color: fg }]}>{label}</Text>
     </View>
   );
@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
   badge: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: spacing.xs,
-    paddingHorizontal: spacing.sm,
-    paddingVertical: 3,
+    gap: 6,
+    paddingHorizontal: spacing.md,
+    paddingVertical: 6,
     borderRadius: radius.sm,
   },
-  label: { fontSize: 12, fontWeight: '600' },
+  label: { fontSize: 14, fontWeight: '600' },
 });

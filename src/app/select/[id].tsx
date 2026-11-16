@@ -2,9 +2,10 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import * as ImagePicker from 'expo-image-picker';
 import { useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
-import { Alert, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Image, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { EmptyState } from '@/components/ScreenStates';
+import { Text } from '@/components/Text';
 import { colors, font, radius, spacing } from '@/constants/theme';
 import { useNow } from '@/hooks/useNow';
 import { keepPhotoOnDevice } from '@/services/photos';

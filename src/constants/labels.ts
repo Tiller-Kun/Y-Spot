@@ -16,7 +16,7 @@ export const NOISE_LEVELS: NoiseLevel[] = ['silent', 'quiet', 'moderate', 'livel
 export const NOISE_LABELS: Record<NoiseLevel, string> = {
   silent: 'Silent',
   quiet: 'Quiet',
-  moderate: 'Moderate',
+  moderate: 'Moderate Volume',
   lively: 'Talking OK',
 };
 

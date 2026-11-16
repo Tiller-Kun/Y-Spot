@@ -17,10 +17,10 @@ const toneColors: Record<BadgeTone, { bg: string; fg: string }> = {
 };
 
 export const noiseTone: Record<NoiseLevel, BadgeTone> = {
-  silent: 'success',
-  quiet: 'success',
+  silent: 'danger',
+  quiet: 'danger',
   moderate: 'warning',
-  lively: 'danger',
+  lively: 'success',
 };
 
 interface Props {

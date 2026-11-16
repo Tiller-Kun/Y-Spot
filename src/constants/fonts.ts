@@ -2,9 +2,8 @@ import { Nunito_400Regular } from '@expo-google-fonts/nunito/400Regular';
 import { Nunito_600SemiBold } from '@expo-google-fonts/nunito/600SemiBold';
 import { Nunito_700Bold } from '@expo-google-fonts/nunito/700Bold';
 
-// The one place fonts are defined. Nunito is a free rounded stand-in for
-// Aurel Round (a paid font). To switch: put licensed .otf files in
-// assets/fonts/, point `fontAssets` at them, and keep the three family names.
+// The one place fonts are defined. Nunito is the app font. To change it,
+// point `fontAssets` at other font files and keep the three family names.
 
 export const fontFamily = {
   regular: 'AppFont-Regular',

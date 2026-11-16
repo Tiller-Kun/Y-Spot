@@ -23,6 +23,10 @@ export default function RootLayout() {
             options={{ title: "", headerBackTitle: "Back" }}
           />
           <Stack.Screen
+            name="select/[id]"
+            options={{ title: "Select spot", presentation: "modal" }}
+          />
+          <Stack.Screen
             name="filters"
             options={{ title: "Filters", presentation: "modal" }}
           />

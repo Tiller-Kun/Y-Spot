@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 
 import { usePersistentState } from '@/hooks/usePersistentState';
+import { PhotosProvider } from '@/state/PhotosProvider';
 import { fetchCampusData, type DataSource } from '@/services/spots';
 import type { Building, Spot } from '@/types/spot';
 import { DEFAULT_FILTERS, type SpotFilters } from '@/utils/filterSpots';
@@ -180,7 +181,9 @@ export function AppProviders({ children }: { children: ReactNode }) {
     <CampusProvider>
       <SavedProvider>
         <FiltersProvider>
-          <PrivacyProvider>{children}</PrivacyProvider>
+          <PrivacyProvider>
+            <PhotosProvider>{children}</PhotosProvider>
+          </PrivacyProvider>
         </FiltersProvider>
       </SavedProvider>
     </CampusProvider>

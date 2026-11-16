@@ -7,7 +7,6 @@ export interface SpotFilters {
   query: string;
   openNow: boolean;
   outlets: boolean;
-  bookable: boolean;
   /** Loudest noise level to include. */
   maxNoise: NoiseLevel;
   groupSize: number;
@@ -22,7 +21,6 @@ export const DEFAULT_FILTERS: SpotFilters = {
   query: '',
   openNow: false,
   outlets: false,
-  bookable: false,
   maxNoise: 'lively',
   groupSize: 1,
   restroom: false,
@@ -54,7 +52,6 @@ export function filterSpots(spots: Spot[], f: SpotFilters, now: Date): Spot[] {
       if (query && !s.name.toLowerCase().includes(query) && !s.nameKo.includes(query)) return false;
       if (f.openNow && !isOpenAt(s.hours, now)) return false;
       if (f.outlets && !s.amenities.outlets) return false;
-      if (f.bookable && !s.bookable) return false;
       if (NOISE_LEVELS.indexOf(s.noise) > maxNoise) return false;
       if (s.groupSize.max < f.groupSize) return false;
       if (f.restroom && !s.amenities.restroom) return false;

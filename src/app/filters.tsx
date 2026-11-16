@@ -11,9 +11,10 @@ import { useNow } from '@/hooks/useNow';
 import { useCampus, useFilters } from '@/state/AppProviders';
 import { filterSpots, type SpotFilters } from '@/utils/filterSpots';
 
-type AmenityKey = keyof Pick<SpotFilters, 'restroom' | 'food' | 'discussionRooms'>;
+type AmenityKey = keyof Pick<SpotFilters, 'outlets' | 'restroom' | 'food' | 'discussionRooms'>;
 
 const AMENITY_ROWS: { key: AmenityKey; label: string }[] = [
+  { key: 'outlets', label: 'Power outlets' },
   { key: 'restroom', label: 'Restroom nearby' },
   { key: 'food', label: 'Food nearby' },
   { key: 'discussionRooms', label: 'Discussion rooms' },

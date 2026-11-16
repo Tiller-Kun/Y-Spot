@@ -4,10 +4,10 @@ import type { AccessRule, Intent, NoiseLevel, SpotCategory } from '@/types/spot'
 // reviewed and translated in one place.
 
 export const INTENT_OPTIONS: { value: Intent | 'all'; label: string }[] = [
-  { value: 'all', label: 'See everything' },
-  { value: 'focus', label: 'Focus alone' },
-  { value: 'group', label: 'Work in a group' },
-  { value: 'relax', label: 'Relax and talk' },
+  { value: 'all', label: 'See Everything' },
+  { value: 'focus', label: 'Focus Alone' },
+  { value: 'group', label: 'Group Work' },
+  { value: 'relax', label: 'Relax and Talk' },
 ];
 
 /** Ordered quietest to loudest; the filters rely on this order. */

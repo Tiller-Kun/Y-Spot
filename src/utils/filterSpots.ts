@@ -36,6 +36,7 @@ export function countAdvancedFilters(f: SpotFilters): number {
   return [
     f.maxNoise !== DEFAULT_FILTERS.maxNoise,
     f.groupSize !== DEFAULT_FILTERS.groupSize,
+    f.outlets,
     f.restroom,
     f.food,
     f.discussionRooms,

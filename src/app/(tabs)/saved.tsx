@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { ActivityIndicator, Alert, FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Alert, FlatList, Pressable, StyleSheet, TextInput, View } from 'react-native';
+
+import { Text } from '@/components/Text';
 
 import { EmptyState } from '@/components/ScreenStates';
 import { SpotCard } from '@/components/SpotCard';

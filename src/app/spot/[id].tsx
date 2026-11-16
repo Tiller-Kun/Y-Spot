@@ -1,6 +1,8 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
-import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, View } from 'react-native';
+
+import { Text } from '@/components/Text';
 
 import { Badge, noiseTone } from '@/components/Badge';
 import { CrowdMeter } from '@/components/CrowdMeter';

@@ -1,5 +1,7 @@
 import Constants from 'expo-constants';
-import { ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Switch, View } from 'react-native';
+
+import { Text } from '@/components/Text';
 
 import { colors, font, radius, spacing } from '@/constants/theme';
 import { useCampus, usePrivacy, type PrivacyPrefs } from '@/state/AppProviders';

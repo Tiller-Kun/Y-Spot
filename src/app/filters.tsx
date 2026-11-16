@@ -1,6 +1,8 @@
 import { router } from 'expo-router';
 import { useMemo } from 'react';
-import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Switch, View } from 'react-native';
+
+import { Text } from '@/components/Text';
 
 import { Chip } from '@/components/Chip';
 import { NOISE_LABELS, NOISE_LEVELS } from '@/constants/labels';

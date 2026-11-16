@@ -60,7 +60,6 @@ export default function DiscoverScreen() {
           onPress={() => router.push('/filters')}
         />
         <Chip label="Open now" icon="time-outline" selected={filters.openNow} onPress={() => updateFilters({ openNow: !filters.openNow })} />
-        <Chip label="Bookable" icon="calendar-outline" selected={filters.bookable} onPress={() => updateFilters({ bookable: !filters.bookable })} />
       </ScrollView>
 
       {source === 'sample' && (
@@ -87,7 +86,7 @@ export default function DiscoverScreen() {
         renderItem={({ item }) => <SpotCard spot={item} now={now} />}
         ListHeaderComponent={header}
         ListEmptyComponent={
-          <Pressable onPress={() => updateFilters({ intent: 'all', query: '', openNow: false, outlets: false, bookable: false })}>
+          <Pressable onPress={() => updateFilters({ intent: 'all', query: '', openNow: false, outlets: false })}>
             <Text style={styles.emptyText}>No spots match. Tap to clear the quick filters.</Text>
           </Pressable>
         }

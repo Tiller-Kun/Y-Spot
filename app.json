@@ -26,7 +26,8 @@
       "expo-router",
       "expo-status-bar",
       "expo-font",
-      ["expo-splash-screen", { "backgroundColor": "#E8EEF8", "image": "./assets/splash-icon.png", "imageWidth": 120 }]
+      ["expo-splash-screen", { "backgroundColor": "#E8EEF8", "image": "./assets/splash-icon.png", "imageWidth": 120 }],
+      ["expo-image-picker", { "photosPermission": "Y-Spot uses your photos so you can share how a study spot looks.", "cameraPermission": "Y-Spot uses your camera so you can share how a study spot looks.", "microphonePermission": false }]
     ],
     "experiments": {
       "typedRoutes": true

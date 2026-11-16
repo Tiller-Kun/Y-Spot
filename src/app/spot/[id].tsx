@@ -1,6 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
-import { Alert, Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { Text } from '@/components/Text';
 
@@ -115,16 +115,13 @@ export default function SpotDetailScreen() {
         >
           <Text style={[styles.buttonText, { color: colors.primary }]}>Show On Map</Text>
         </Pressable>
-        {spot.bookable && (
-          <Pressable
-            style={[styles.button, styles.primary]}
-            // TODO: link out to mY-Seat2 once we confirm how to deep link into it.
-            onPress={() => Alert.alert('Reserve a seat', 'Seats here are booked through the mY-Seat2 app.')}
-            accessibilityRole="button"
-          >
-            <Text style={[styles.buttonText, { color: colors.surface }]}>Reserve seat</Text>
-          </Pressable>
-        )}
+        <Pressable
+          style={[styles.button, styles.primary]}
+          onPress={() => router.push({ pathname: '/select/[id]', params: { id: spot.id } })}
+          accessibilityRole="button"
+        >
+          <Text style={[styles.buttonText, { color: colors.surface }]}>Select</Text>
+        </Pressable>
       </View>
     </View>
   );

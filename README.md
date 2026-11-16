@@ -6,7 +6,7 @@ Y-Spot is a mobile app that helps students discover study spaces on Yonsei's Sin
 
 ## Features
 
-- **Discover:** browse spots by what you want to do (*Focus Alone · Group Work · Relax and Talk*), search in English or 한글, and filter by *Open now* or *Bookable*
+- **Discover:** browse spots by what you want to do (*Focus Alone · Group Work · Relax and Talk*), search in English or 한글, and filter by *Open now*
 - **Filters:** narrow results by noise level, group size, amenities, and nearby department
 - **Spot details:** noise, hours, access rules, typical busyness by hour, and directions
 - **Campus map:** a simple schematic map showing which building each spot is in

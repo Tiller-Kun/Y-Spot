@@ -43,6 +43,6 @@ export function crowdLevel(occupancy: number): 'low' | 'medium' | 'high' {
 
 export const CROWD_LABELS = {
   low: 'Plenty of seats',
-  medium: 'Filling up',
-  high: 'Packed',
+  medium: 'Moderately Busy',
+  high: 'Usually Packed',
 } as const;

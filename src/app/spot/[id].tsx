@@ -113,7 +113,7 @@ export default function SpotDetailScreen() {
           onPress={() => router.navigate({ pathname: '/map', params: { spotId: spot.id } })}
           accessibilityRole="button"
         >
-          <Text style={[styles.buttonText, { color: colors.primary }]}>Show on map</Text>
+          <Text style={[styles.buttonText, { color: colors.primary }]}>Show On Map</Text>
         </Pressable>
         {spot.bookable && (
           <Pressable

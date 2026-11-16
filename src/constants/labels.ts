@@ -4,10 +4,10 @@ import type { AccessRule, Intent, NoiseLevel, SpotCategory } from '@/types/spot'
 // reviewed and translated in one place.
 
 export const INTENT_OPTIONS: { value: Intent | 'all'; label: string }[] = [
-  { value: 'all', label: 'See everything' },
-  { value: 'focus', label: 'Focus alone' },
-  { value: 'group', label: 'Work in a group' },
-  { value: 'relax', label: 'Relax and talk' },
+  { value: 'all', label: 'See Everything' },
+  { value: 'focus', label: 'Focus Alone' },
+  { value: 'group', label: 'Group Work' },
+  { value: 'relax', label: 'Relax and Talk' },
 ];
 
 /** Ordered quietest to loudest; the filters rely on this order. */
@@ -16,7 +16,7 @@ export const NOISE_LEVELS: NoiseLevel[] = ['silent', 'quiet', 'moderate', 'livel
 export const NOISE_LABELS: Record<NoiseLevel, string> = {
   silent: 'Silent',
   quiet: 'Quiet',
-  moderate: 'Moderate',
+  moderate: 'Moderate Volume',
   lively: 'Talking OK',
 };
 
@@ -34,9 +34,15 @@ export const ACCESS_LABELS: Record<AccessRule, string> = {
   reservation: 'Reservation required',
 };
 
-export function crowdLabel(occupancy: number): string {
-  if (occupancy < 0.3) return 'Plenty of seats';
-  if (occupancy < 0.55) return 'Some seats';
-  if (occupancy < 0.8) return 'Busy';
-  return 'Packed';
+/** Three levels (green / yellow / red) so the badge reads at a glance. */
+export function crowdLevel(occupancy: number): 'low' | 'medium' | 'high' {
+  if (occupancy < 0.35) return 'low';
+  if (occupancy < 0.7) return 'medium';
+  return 'high';
 }
+
+export const CROWD_LABELS = {
+  low: 'Plenty of seats',
+  medium: 'Moderately Busy',
+  high: 'Usually Packed',
+} as const;

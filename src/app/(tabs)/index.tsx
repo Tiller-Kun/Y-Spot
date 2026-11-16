@@ -60,7 +60,6 @@ export default function DiscoverScreen() {
           onPress={() => router.push('/filters')}
         />
         <Chip label="Open now" icon="time-outline" selected={filters.openNow} onPress={() => updateFilters({ openNow: !filters.openNow })} />
-        <Chip label="Outlets" icon="flash-outline" selected={filters.outlets} onPress={() => updateFilters({ outlets: !filters.outlets })} />
         <Chip label="Bookable" icon="calendar-outline" selected={filters.bookable} onPress={() => updateFilters({ bookable: !filters.bookable })} />
       </ScrollView>
 

@@ -19,12 +19,12 @@ export function isOpenAt(hours: WeeklyHours, date: Date): boolean {
 
 export function openStatus(hours: WeeklyHours, date: Date): { open: boolean; label: string } {
   const range = hoursFor(hours, date);
-  if (!range) return { open: false, label: 'Closed today' };
-  if (range.open === '00:00' && range.close === '24:00') return { open: true, label: 'Open 24 hours' };
-  if (isOpenAt(hours, date)) return { open: true, label: `Open until ${range.close}` };
+  if (!range) return { open: false, label: 'Closed Today' };
+  if (range.open === '00:00' && range.close === '24:00') return { open: true, label: 'Open 24 Hours' };
+  if (isOpenAt(hours, date)) return { open: true, label: `Open Until ${range.close}` };
   const now = date.getHours() * 60 + date.getMinutes();
-  if (now < toMinutes(range.open)) return { open: false, label: `Opens at ${range.open}` };
-  return { open: false, label: 'Closed now' };
+  if (now < toMinutes(range.open)) return { open: false, label: `Opens At ${range.open}` };
+  return { open: false, label: 'Closed Now' };
 }
 
 export function formatRange(range: TimeRange | null): string {

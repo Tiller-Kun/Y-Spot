@@ -19,8 +19,8 @@ const PIN_HEIGHT = 40;
 export default function MapScreen() {
   const { spotId } = useLocalSearchParams<{ spotId?: string }>();
   const { spots, buildings, loading, getSpot } = useCampus();
-  // "Show on map" from a spot detail preselects that spot's building. A tap on
-  // the map overrides it until the next "Show on map" changes `spotId`.
+  // "Show On Map" from a spot detail preselects that spot's building. A tap on
+  // the map overrides it until the next "Show On Map" changes `spotId`.
   const [picked, setPicked] = useState<{ forSpotId?: string; buildingId: string | null } | null>(null);
   const selectedBuildingId =
     picked && picked.forSpotId === spotId ? picked.buildingId : spotId ? (getSpot(spotId)?.buildingId ?? null) : null;

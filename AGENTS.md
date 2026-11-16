@@ -39,3 +39,10 @@ Docs: https://docs.expo.dev/eas/index.md
 - If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
 - Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
 - Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+
+## Y-Spot specifics
+
+- Read `README.md` first. All app code lives in `src/`, and imports use the `@/` alias.
+- Lint with `npm run lint` (runs `eslint .` directly; `npx expo lint` currently fails its ESLint version check).
+- Spot data in `src/data/` is placeholder data. Never present it as verified, and keep `scripts/generate-seed.mts` working (relative imports only in `src/data/`).
+- Data model changes touch `src/types/spot.ts`, a new `supabase/migrations/` file, and `src/services/spots.ts`.
